@@ -1,0 +1,31 @@
+.outer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.container{
+    max-width: 400px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.container .bg-image img{
+    border-radius: 8px;
+}
+.music-buttons{
+    display: flex;
+    justify-self: center;
+    gap: 40px;
+}
+.music-buttons .b{
+    width: 25px;
+    height: 25px;
+}
+.musicplay{
+    background-color: transparent;
+    outline: 0;
+    border: 0;
+}
