@@ -11,20 +11,20 @@ import {
 const Music = () => {
   const musicArray = [
     {
-      song: "/asset/music_list/Alagendra-Sollukku-Muruga.mp3",
-      image: "/asset/images/murugan.jpeg",
+      song: "asset/music_list/Alagendra-Sollukku-Muruga.mp3",
+      image: "asset/images/murugan.jpeg",
     },
     {
-      song: "/asset/music_list/Bloody-Sweet-MassTamilan.dev.mp3",
-      image: "/asset/images/leo.jpeg",
+      song: "asset/music_list/Bloody-Sweet-MassTamilan.dev.mp3",
+      image: "asset/images/leo.jpeg",
     },
     {
-      song: "/asset/music_list/Malare-Ninne.mp3",
-      image: "/asset/images/premam.jpeg",
+      song: "asset/music_list/Malare-Ninne.mp3",
+      image: "asset/images/premam.jpeg",
     },
     {
-      song: "/asset/music_list/Vaadamallikaari-En-Varungala-MassTamilan.com.mp3",
-      image: "/asset/images/koli kuvuthu.jpeg",
+      song: "asset/music_list/Vaadamallikaari-En-Varungala-MassTamilan.com.mp3",
+      image: "asset/images/koli kuvuthu.jpeg",
     },
   ];
 
