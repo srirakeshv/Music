@@ -11,20 +11,20 @@ import {
 const Music = () => {
   const musicArray = [
     {
-      song: "asset/music_list/Alagendra-Sollukku-Muruga.mp3",
-      image: "asset/images/murugan.jpeg",
+      song: "/asset/music_list/Alagendra-Sollukku-Muruga.mp3",
+      image: "/asset/images/murugan.jpeg",
     },
     {
-      song: "asset/music_list/Bloody-Sweet-MassTamilan.dev.mp3",
-      image: "asset/images/leo.jpeg",
+      song: "/asset/music_list/Bloody-Sweet-MassTamilan.dev.mp3",
+      image: "/asset/images/leo.jpeg",
     },
     {
-      song: "asset/music_list/Malare-Ninne.mp3",
-      image: "asset/images/premam.jpeg",
+      song: "/asset/music_list/Malare-Ninne.mp3",
+      image: "/asset/images/premam.jpeg",
     },
     {
-      song: "asset/music_list/Vaadamallikaari-En-Varungala-MassTamilan.com.mp3",
-      image: "asset/images/koli kuvuthu.jpeg",
+      song: "/asset/music_list/Vaadamallikaari-En-Varungala-MassTamilan.com.mp3",
+      image: "/asset/images/koli kuvuthu.jpeg",
     },
   ];
 
@@ -34,7 +34,9 @@ const Music = () => {
   const [image, setimage] = useState(0);
   const [currentTime, setCurrentTime] = useState("00:00");
   const [duration, setDuration] = useState("00:00");
-  const audioRef = useRef(new Audio(musicArray[currentSongIndex].song));
+  const audioRef = useRef(
+    new Audio(`${process.env.PUBLIC_URL}${musicArray[currentSongIndex].song}`)
+  );
 
   //play button
   const handleactive = () => {
@@ -55,7 +57,7 @@ const Music = () => {
     let song = (currentSongIndex + 1) % musicArray.length;
     console.log(song);
     setCurrentSongIndex(song);
-    audioRef.current.src = musicArray[song].song;
+    audioRef.current.src = `${process.env.PUBLIC_URL}${musicArray[song].song}`;
     setimage(song);
     audioRef.current.play();
     setPause(true);
@@ -68,7 +70,7 @@ const Music = () => {
       (currentSongIndex - 1 + musicArray.length) % musicArray.length;
     console.log(prevsongs);
     setCurrentSongIndex(prevsongs);
-    audioRef.current.src = musicArray[prevsongs].song;
+    audioRef.current.src = `${process.env.PUBLIC_URL}${musicArray[prevsongs].song}`;
     audioRef.current.play();
     setimage(prevsongs);
     setPause(true);
@@ -115,7 +117,9 @@ const Music = () => {
     <div className="outer">
       <div className="container">
         <div className="bg-image">
-          <img src={musicArray[image].image}></img>
+          <img
+            src={`${process.env.PUBLIC_URL}${musicArray[image].image}`}
+          ></img>
         </div>
         <div className="duration">
           <p>{currentTime}</p>
